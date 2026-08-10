@@ -40,31 +40,6 @@ body {
     padding: 0;
 }
 
-.boton {
-    background: radial-gradient(circle at center, #f8b199 0%, var(--second) 55%, #df440f 100%);
-    color: var(--blanco);
-    padding: 1rem 3rem;
-    margin: 1rem auto 0;
-    /* centrado horizontal con margen automático */
-    font-size: 2rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: normal;
-    border-radius: 2rem;
-    width: auto;
-    text-align: center;
-    border: none;
-    display: inline-block;
-    /* asegura que el margen auto funcione */
-    box-shadow: 0 6px 16px rgba(243, 119, 77, .4);
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.boton:hover {
-    cursor: pointer;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(243, 119, 77, .5);
-}
 
 /* ===== Botón Ceremonia (dorado) ===== */
 .boton-ceremonia {
@@ -195,9 +170,7 @@ body {
     }
 }
 
-.boton:hover {
-    cursor: pointer;
-}
+
 
 .sombra {
     -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
@@ -208,23 +181,6 @@ body {
     border-radius: 1rem;
 }
 
-.banner-ambos {
-    position: relative;
-
-    background-image:
-        url("../img/baner-izquierdo.png"),
-        url("../img/baner-derecho.png");
-
-    background-repeat: no-repeat, no-repeat;
-
-    background-position:
-        left center,
-        right center;
-
-    background-size:
-        35% 100%,
-        35% 100%;
-}
 
 /* contenido encima */
 .banner-ambos>* {
@@ -238,23 +194,7 @@ body {
 }
 
 
-.fondo-footer {
-    position: relative;
-    width: 100%;
-    min-height: 70vh;
 
-    background:
-
-        /*url("../img/fondo-fin.png"),*/
-        linear-gradient(to bottom, #A2D2FF 0%, #00B4D8 33%, #0077B6 66%, #03045E 100%);
-    /* degradado base */
-
-    background-repeat: no-repeat;
-    background-position: center center, center center, center;
-    background-size: cover, cover, cover;
-
-    overflow: hidden;
-}
 
 /*Tipografia*/
 h1 {
@@ -281,23 +221,6 @@ h3 {
 }
 
 /*Utilidades*/
-.w-sm-100 {
-    width: 100%;
-}
-
-@media (min-width: 768px) {
-    .w-sm-100 {
-        width: auto;
-    }
-}
-
-.flex {
-    display: flex;
-}
-
-.alinear-derecha {
-    justify-content: flex-end;
-}
 
 /* separación entre secciones/contendores */
 .separacion-contenedor {
@@ -389,19 +312,7 @@ h3 {
     align-items: flex-end;
 }
 
-.frase-inicial p {
-    font-family: "Cinzel", serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 2rem;
-    align-self: flex-end;
-    /* 🔥 clave */
-    text-align: center;
-    margin-right: 3rem;
-    /* opcional para separarlo del borde */
 
-}
 
 /* Variant: aplicar fuente DynaPuff al h1 dentro de .contenido-hero--dynapuff */
 .xv h1 {
@@ -507,39 +418,8 @@ h3 {
     padding: 1rem 0.5rem;
 }
 
-.padres {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .5rem;
-    padding: 5rem 1rem;
 
-}
-.padres p {
-    font-family: "Cinzel", serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.5rem;
-    text-align: center;
-}
 
-.padrinos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .5rem;
-    padding: 5rem 1rem;
-}
-.padrinos p {
-    font-family: "Cinzel", serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.5rem;
-    text-align: center;
-}   
 
 .ceremonia {
     padding: 1rem;
@@ -589,30 +469,6 @@ h3 {
     -webkit-text-fill-color: transparent;
 }
 
-.hashtag {
-    display: flex;
-    align-items: center;
-    /* centra vertical */
-    justify-content: center;
-    /*centra horizontal */
-    gap: 0.5rem;
-}
-
-.hashtag-espacio {
-    margin-bottom: 6.5rem;
-}
-
-.hashtag img {
-    width: 50px;
-    height: auto;
-}
-
-.hashtag h4 {
-    font-size: 5rem;
-    margin: 0;
-    /* elimina margen por defecto */
-
-}
 
 /* ===== Sección frase ===== */
 .fecha{
@@ -669,9 +525,6 @@ border-radius:1rem;
 
 
 
-.marco-azul {
-    border: 2px solid #2b3b5d;
-}
 
 /*footer*/
 .footer {
@@ -697,12 +550,6 @@ border-radius:1rem;
     border-radius: 1rem 1rem 0 0;
 }
 
-.regalos__imagen img {
-
-    width: 100%;
-    display: block;
-    /* elimina el espacio inferior por línea base */
-}
 
 .fondo-imagen__padrinos {
     position: relative;
@@ -715,75 +562,6 @@ border-radius:1rem;
     background-size: cover;
 }
 
-.fondo-peces {
-    position: relative;
-    padding-bottom: 80px;
-    /* espacio real para la imagen */
-}
-
-.fondo-peces::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 120px;
-    /* altura visible de la imagen */
-
-    background-image: url("../img/peces-inferior.png");
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: contain;
-}
-
-.fondo-peces-superior {
-    position: relative;
-    padding-top: 50px;
-    /* debe coincidir con la altura */
-}
-
-.fondo-peces-superior::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
-
-    background-image: url("../img/peces-superior.png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: contain;
-
-    pointer-events: none;
-}
-
-@media (min-width: 760px) {
-
-    .fondo-peces {
-        padding-bottom: 200px;
-        /* ajusta según el diseño */
-    }
-
-    .fondo-peces::after {
-        height: 200px;
-        background-size: cover;
-        /* 🔥 ocupa todo el ancho */
-        background-position: center bottom;
-    }
-
-    .fondo-peces-superior {
-        padding-top: 200px;
-    }
-
-    .fondo-peces-superior::before {
-        height: 200px;
-        background-size: cover;
-        /* 🔥 ocupa todo el ancho */
-        background-position: center top;
-    }
-
-}
 
 /* Ícono de ubicación: centrado y escalable responsivo */
 .icono {
@@ -798,17 +576,6 @@ border-radius:1rem;
     height: auto;
 }
 
-.corona {
-    text-align: center;
-    /* centra el contenido en línea, útil si la imagen es inline-block */
-}
-
-.corona img {
-    padding: 1rem 0;
-    max-width: 120px;
-    width: 100%;
-    height: auto;
-}
 
 /* Accessibility helper: visually hide element but keep it for screen readers */
 .sr-only {
@@ -823,15 +590,6 @@ border-radius:1rem;
     border: 0;
 }
 
-.glassmorphism {
-    padding: 1.6rem 1.8rem;
-    background: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 1.2rem;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
-}
 
 /* ===== Panel de vestimenta: paleta + aviso de cristal ===== */
 /* Aseguramos que la sección 6 se comporte como una sola columna de ancho completo */
@@ -858,34 +616,6 @@ border-radius:1rem;
   align-items:center;
   gap:2.2rem;
   overflow:hidden;
-}
-
-/* fila de círculos de color */
-.paleta-circulos{
-  display:flex;
-  gap:1.1rem;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.circulo{
-  width:3.4rem;
-  height:3.4rem;
-  border-radius:50%;
-  background:var(--color);
-  border:2px solid rgba(255,255,255,.45);
-  box-shadow:0 3px 10px rgba(0,0,0,.4);
-  transition:transform .25s ease, box-shadow .25s ease;
-  cursor:pointer;
-}
-.circulo:hover{ transform:translateY(-3px); }
-
-.circulo.reservado{
-  border:3px solid transparent;
-  background:
-    linear-gradient(var(--color), var(--color)) padding-box,
-    linear-gradient(135deg, var(--oro2), var(--oro1) 60%, var(--oro3)) border-box;
-  transform:scale(1.18);
-  box-shadow:0 4px 14px rgba(0,0,0,.45), 0 0 0 3px rgba(191,149,63,.25);
 }
 
 /* tarjeta de cristal (glassmorphism) */
