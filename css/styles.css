@@ -908,10 +908,9 @@ border-radius:1rem;
     text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
 }
 .desliza{
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    margin-top: -1rem; /* compensa el padding-top de .sombra */
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 
     height: auto;
     display: flex;
@@ -1300,36 +1299,62 @@ font-family: 'Poiret One', sans-serif;
 }
 
 /* ===== Botón flotante de música ===== */
-.musica-flotante{
-  position:fixed;
-  bottom:2rem;
-  right:2rem;
-  z-index:999;
+/* ===== Botón flotante de música ===== */
+.musica-flotante {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
 
-  width:5rem;
-  height:5rem;
-  border-radius:50%;
-  border:1.5px solid rgba(191,149,63,.7);
-  background:radial-gradient(circle at 35% 30%, #22355a, #0e1729 80%);
-  box-shadow:0 6px 18px rgba(0,0,0,.5), 0 0 14px rgba(191,149,63,.25);
+    width: 5rem;
+    height: 5rem;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  padding:0;
-  visibility:visible;
-  opacity:1;
+    z-index: 99999;
+
+    border-radius: 50%;
+    border: 1.5px solid rgba(191,149,63,.7);
+
+    background: radial-gradient(
+        circle at 35% 30%,
+        #22355a,
+        #0e1729 80%
+    );
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.5),
+        0 0 14px rgba(191,149,63,.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    padding: 0;
+
+    visibility: visible;
+    opacity: 1;
 }
 
-.musica-flotante__icono{
-  font-size:2rem;
-  color:var(--oro1);
+.musica-flotante__icono {
+    font-size: 2rem;
+    line-height: 1;
+      color:var(--oro1);
   background:linear-gradient(180deg, var(--oro2), var(--oro1) 60%, var(--oro3));
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
-  line-height:1;
+}
+
+@media (max-width: 480px) {
+    .musica-flotante {
+        width: 4.5rem;
+        height: 4.5rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .musica-flotante__icono {
+        font-size: 2rem;
+    }
 }
 
 /* gira solo mientras está sonando */
@@ -1344,16 +1369,4 @@ font-family: 'Poiret One', sans-serif;
 
 @media (prefers-reduced-motion: reduce){
   .musica-flotante.girando{ animation:none; }
-}
-@media (max-width: 480px) {
-    .musica-flotante {
-        width: 4rem;
-        height: 4rem;
-        bottom: 2rem;
-        right: 2rem;
-    }
-
-    .musica-flotante__icono {
-        font-size: 2rem;
-    }
 }
