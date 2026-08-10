@@ -1302,8 +1302,8 @@ font-family: 'Poiret One', sans-serif;
 /* ===== Botón flotante de música ===== */
 .musica-flotante{
   position:fixed;
-  bottom:1.5rem;
-  right:1.5rem;
+  bottom:2rem;
+  right:2rem;
   z-index:999;
 
   width:5rem;
@@ -1344,4 +1344,16 @@ font-family: 'Poiret One', sans-serif;
 
 @media (prefers-reduced-motion: reduce){
   .musica-flotante.girando{ animation:none; }
+}
+@media (max-width: 480px) {
+    .musica-flotante {
+        width: 4rem;
+        height: 4rem;
+        bottom: 2rem;
+        right: 2rem;
+    }
+
+    .musica-flotante__icono {
+        font-size: 2rem;
+    }
 }
