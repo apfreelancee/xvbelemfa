@@ -1306,8 +1306,8 @@ font-family: 'Poiret One', sans-serif;
   right:1.5rem;
   z-index:999;
 
-  width:3.6rem;
-  height:3.6rem;
+  width:5rem;
+  height:5rem;
   border-radius:50%;
   border:1.5px solid rgba(191,149,63,.7);
   background:radial-gradient(circle at 35% 30%, #22355a, #0e1729 80%);
@@ -1318,10 +1318,12 @@ font-family: 'Poiret One', sans-serif;
   justify-content:center;
   cursor:pointer;
   padding:0;
+  visibility:visible;
+  opacity:1;
 }
 
 .musica-flotante__icono{
-  font-size:1.4rem;
+  font-size:2rem;
   color:var(--oro1);
   background:linear-gradient(180deg, var(--oro2), var(--oro1) 60%, var(--oro3));
   -webkit-background-clip:text;
@@ -1342,16 +1344,4 @@ font-family: 'Poiret One', sans-serif;
 
 @media (prefers-reduced-motion: reduce){
   .musica-flotante.girando{ animation:none; }
-}
-@media (max-width: 480px) {
-    .musica-flotante {
-        width: 3.2rem;
-        height: 3.2rem;
-        bottom: 1rem;
-        right: 1rem;
-    }
-
-    .musica-flotante__icono {
-        font-size: 1.2rem;
-    }
 }
