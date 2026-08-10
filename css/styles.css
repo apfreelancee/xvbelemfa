@@ -1,0 +1,1543 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #2b3b5d;
+    --second: #f3774d;
+    --gris: #F5EDDD;
+      --oro1:#BF953F;
+  --oro2:#FCF6BA;
+  --oro3:#B38728;
+}
+
+/*Globales*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    /*Hack para box model*/
+    scroll-snap-type: y mandatory;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    /*1rem = 10px */
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco) 100%);
+    /*Primero se pasa dirección, color porcentaje, color final y procentaje*/
+}
+
+
+/*snap*/
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.boton {
+    background: radial-gradient(circle at center, #f8b199 0%, var(--second) 55%, #df440f 100%);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin: 1rem auto 0;
+    /* centrado horizontal con margen automático */
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 2rem;
+    width: auto;
+    text-align: center;
+    border: none;
+    display: inline-block;
+    /* asegura que el margen auto funcione */
+    box-shadow: 0 6px 16px rgba(243, 119, 77, .4);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.boton:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(243, 119, 77, .5);
+}
+
+/* ===== Botón Ceremonia (dorado) ===== */
+.boton-ceremonia {
+    position: relative;
+    background: radial-gradient(circle at center, var(--oro2) 0%, var(--oro1) 55%, var(--oro3) 100%);
+    color: #1c1c1c;
+    padding: 1rem 3rem;
+    margin: 1rem auto 0;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 2rem;
+    width: auto;
+    text-align: center;
+    border: none;
+    display: inline-block;
+    box-shadow: 0 6px 16px rgba(191, 149, 63, .4);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.boton-ceremonia::before{
+    content: "";
+    position: absolute;
+    inset: -6px;
+    z-index: -1;
+    border-radius: inherit;
+    background: radial-gradient(circle at center, rgba(252,246,186,.55) 0%, transparent 70%);
+    filter: blur(10px);
+    animation: resplandor-dorado 2.4s ease-in-out infinite;
+}
+
+.boton-ceremonia:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(191, 149, 63, .5);
+}
+
+@keyframes resplandor-dorado{
+    0%, 100%{ opacity:.5; transform:scale(1); }
+    50%{ opacity:1; transform:scale(1.08); }
+}
+
+
+/* ===== Botón Recepción (azul) ===== */
+.boton-recepcion {
+    position: relative;
+    background: radial-gradient(circle at center, #5b7abc 0%, var(--primario) 55%, #182033 100%);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin: 1rem auto 0;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 2rem;
+    width: auto;
+    text-align: center;
+    border: none;
+    display: inline-block;
+    box-shadow: 0 6px 16px rgba(43, 59, 93, .5);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.boton-recepcion::before{
+    content: "";
+    position: absolute;
+    inset: -6px;
+    z-index: -1;
+    border-radius: inherit;
+    background: radial-gradient(circle at center, rgba(91,122,188,.5) 0%, transparent 70%);
+    filter: blur(10px);
+    animation: resplandor-azul 2.4s ease-in-out infinite;
+}
+
+.boton-recepcion:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(43, 59, 93, .6);
+}
+
+@keyframes resplandor-azul{
+    0%, 100%{ opacity:.5; transform:scale(1); }
+    50%{ opacity:1; transform:scale(1.08); }
+}
+
+.contenedor-boton {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.fondo-blanco {
+    background-color: var(--gris);
+    width: 100%;
+}
+
+.fondo-azul {
+        background:
+        radial-gradient(circle at 20% 15%, rgba(191,149,63,.20) 0%, transparent 7%),
+        radial-gradient(circle at 82% 20%, rgba(252,246,186,.15) 0%, transparent 6%),
+        radial-gradient(circle at 65% 80%, rgba(191,149,63,.18) 0%, transparent 7%),
+        radial-gradient(circle at 20% 85%, rgba(179,135,40,.18) 0%, transparent 6%),
+        linear-gradient(160deg, #1a2740 0%, #101c33 55%, #0a1424 100%);
+    width: 100%;
+}
+
+.fondo-degradado {
+    background:
+    linear-gradient(160deg, #1a2740 0%, #101c33 55%, #0a1424 100%);
+    width: 100%;
+}
+
+.texto-negro {
+    color: var(--oscuro);
+}
+
+.texto-azul {
+    color: var(--primario)
+}
+
+.texto-blanco {
+    color: var(--blanco);
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    background-color: var(--blanco);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.banner-ambos {
+    position: relative;
+
+    background-image:
+        url("../img/baner-izquierdo.png"),
+        url("../img/baner-derecho.png");
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-position:
+        left center,
+        right center;
+
+    background-size:
+        35% 100%,
+        35% 100%;
+}
+
+/* contenido encima */
+.banner-ambos>* {
+    position: relative;
+    z-index: 1;
+}
+
+.banner-izquierdo {
+    width: 100%;
+    padding-bottom: 3rem;
+}
+
+
+.fondo-footer {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+
+    background:
+
+        /*url("../img/fondo-fin.png"),*/
+        linear-gradient(to bottom, #A2D2FF 0%, #00B4D8 33%, #0077B6 66%, #03045E 100%);
+    /* degradado base */
+
+    background-repeat: no-repeat;
+    background-position: center center, center center, center;
+    background-size: cover, cover, cover;
+
+    overflow: hidden;
+}
+
+/*Tipografia*/
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 4.5rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+/*Titulos*/
+.titulo span {
+    font-size: 2rem;
+}
+
+/*Utilidades*/
+.w-sm-100 {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
+/* separación entre secciones/contendores */
+.separacion-contenedor {
+    margin-top: 1rem;
+    /* ajusta según sea necesario */
+}
+
+/* uso: añade esta clase al contenedor que deba tener una separación superior */
+
+/*Hero*/
+.hero {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+/* Imagen principal optimizada (LCP) */
+.hero__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+@media (max-width: 767px) {
+    .hero {
+        height: 380px;
+    }
+
+    .hero__img {
+        object-fit: cover;
+    }
+}
+
+/* Banner izquierdo */
+/*.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%; 
+    height: 100%;
+    background-image: url("../img/baner-izquierdo.png");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}*/
+
+/* Overlay oscuro (ahora cubre TODO) */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .20);
+    /* Ajusta intensidad */
+    z-index: 2;
+}
+
+/* Contenido siempre arriba */
+.contenido-hero {
+    position: relative;
+    z-index: 3;
+}
+
+@media (min-width: 768px) {
+    .hero::before {
+        display: none;
+    }
+}
+
+.contenido-hero h1,
+.contenido-hero p,
+.contenido-hero h2 {
+    color: var(--blanco);
+}
+
+.contenido-hero span {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+.contenido-hero .xv {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.frase-inicial p {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    align-self: flex-end;
+    /* 🔥 clave */
+    text-align: center;
+    margin-right: 3rem;
+    /* opcional para separarlo del borde */
+
+}
+
+/* Variant: aplicar fuente DynaPuff al h1 dentro de .contenido-hero--dynapuff */
+.xv h1 {
+    font-family: "Mea Culpa", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    margin-bottom: .5rem;
+    font-size: 7rem;
+    transform: translateY(-3rem);
+}
+
+.nombre h2 {
+    font-family: "Corinthia", cursive;
+    font-style: normal;
+    font-size: 10rem;
+    font-variation-settings: "wdth" 100;
+    padding-top: 7rem;
+    /* margin-bottom: .5rem;   /* reduce separación inferior */
+}
+
+.nombre p {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+.nombre h2,
+.nombre p {
+    margin: 0;
+}
+
+.nombre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .01rem;
+    transform: translateY(1rem);
+}
+@media (min-width: 768px){
+    .hero{
+        display: flex;
+        align-items: center;
+    }
+
+    .contenido-hero{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 0 10rem;
+        width: 100%;
+    }
+
+    .contenido-hero .xv{
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .contenido-hero .xv h1{
+        text-align: left;
+    }
+
+    .contenido-hero .nombre{
+        align-items: flex-end;
+        text-align: right;
+    }
+}
+.seccion p {
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.55rem;
+    line-height: 1.35;
+    margin: 0;
+    text-align: center;
+}
+
+.seccion h3 {
+    font-family: "Corinthia", cursive;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.seccion h4 {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.seccion h3,
+.seccion h4,
+.seccion p {
+    margin: 0;
+}
+
+.seccion-reloj {
+
+    padding: 1rem 0.5rem;
+}
+
+.padres {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    padding: 5rem 1rem;
+
+}
+.padres p {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.padrinos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    padding: 5rem 1rem;
+}
+.padrinos p {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-align: center;
+}   
+
+.ceremonia {
+    padding: 1rem;
+}
+
+.ceremonia h3 {
+    padding: 2rem 0;
+}
+
+.ceremonia h4,
+.ceremonia p {
+    padding: 1.5rem 4rem;
+}
+
+.ceremonia h5 {
+    font-family: "Corinthia", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+
+}
+.ceremonia p {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.titulos h5 {
+    font-family: "Corinthia", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 5rem;
+    text-align: center;
+    margin: 0;
+
+}
+
+.texto-dorado {
+    background: linear-gradient(180deg, var(--oro2) 0%, var(--oro1) 55%, var(--oro3) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hashtag {
+    display: flex;
+    align-items: center;
+    /* centra vertical */
+    justify-content: center;
+    /*centra horizontal */
+    gap: 0.5rem;
+}
+
+.hashtag-espacio {
+    margin-bottom: 6.5rem;
+}
+
+.hashtag img {
+    width: 50px;
+    height: auto;
+}
+
+.hashtag h4 {
+    font-size: 5rem;
+    margin: 0;
+    /* elimina margen por defecto */
+
+}
+
+/* ===== Sección frase ===== */
+.fecha{
+  position:relative;
+  overflow:hidden;
+  padding:3.5rem 2rem;
+  text-align:center;
+border-radius:1rem;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(191,149,63,.18) 0%, transparent 7%),
+    radial-gradient(circle at 85% 15%, rgba(252,246,186,.14) 0%, transparent 6%),
+    radial-gradient(circle at 70% 80%, rgba(191,149,63,.16) 0%, transparent 7%),
+    radial-gradient(circle at 25% 85%, rgba(179,135,40,.16) 0%, transparent 6%),
+    linear-gradient(160deg, #1c2b4a 0%, #14203a 55%, #0d1626 100%);
+}
+
+/* comilla ornamental */
+.fecha::before{
+  content:"\201C";
+  display:block;
+  font-family:'Cinzel', serif;
+  font-size:3.5rem;
+  line-height:1;
+  color:var(--oro1);
+  opacity:.55;
+  margin-bottom:-1rem;
+}
+
+.fecha__linea{
+  width:2.4rem;
+  height:2px;
+  margin:0 auto 1.6rem;
+  border-radius:2px;
+  background:linear-gradient(90deg, transparent, var(--oro1), transparent);
+}
+
+.fecha p{
+  margin:0;
+  font-family:'Tangerine', cursive;
+  font-weight:700;
+  font-size:3.2rem;
+  line-height:1.25;
+  color:var(--blanco);
+  text-shadow:0 2px 10px rgba(0,0,0,.4);
+}
+
+.fecha__linea--abajo{
+  width:2.4rem;
+  height:2px;
+  margin:1.8rem auto 0;
+  border-radius:2px;
+  background:linear-gradient(90deg, transparent, var(--oro1), transparent);
+}
+
+
+
+.marco-azul {
+    border: 2px solid #2b3b5d;
+}
+
+/*footer*/
+.footer {
+    text-align: center;
+}
+
+/* Imagen de la iglesia: ocupar todo el ancho del contenedor */
+.lugar__imagen img {
+    width: 100%;
+    display: block;
+    /* elimina el espacio inferior por línea base */
+}
+
+.fondo__imagen {
+    text-align: center;
+    
+}
+
+.fondo__imagen img {
+    width: 100%;
+    display: block;
+    /* elimina el espacio inferior por línea base */
+    border-radius: 1rem 1rem 0 0;
+}
+
+.regalos__imagen img {
+
+    width: 100%;
+    display: block;
+    /* elimina el espacio inferior por línea base */
+}
+
+.fondo-imagen__padrinos {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+
+    background-image: url("../img/flores-esquina.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.fondo-peces {
+    position: relative;
+    padding-bottom: 80px;
+    /* espacio real para la imagen */
+}
+
+.fondo-peces::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    /* altura visible de la imagen */
+
+    background-image: url("../img/peces-inferior.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+}
+
+.fondo-peces-superior {
+    position: relative;
+    padding-top: 50px;
+    /* debe coincidir con la altura */
+}
+
+.fondo-peces-superior::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+
+    background-image: url("../img/peces-superior.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+
+    pointer-events: none;
+}
+
+@media (min-width: 760px) {
+
+    .fondo-peces {
+        padding-bottom: 200px;
+        /* ajusta según el diseño */
+    }
+
+    .fondo-peces::after {
+        height: 200px;
+        background-size: cover;
+        /* 🔥 ocupa todo el ancho */
+        background-position: center bottom;
+    }
+
+    .fondo-peces-superior {
+        padding-top: 200px;
+    }
+
+    .fondo-peces-superior::before {
+        height: 200px;
+        background-size: cover;
+        /* 🔥 ocupa todo el ancho */
+        background-position: center top;
+    }
+
+}
+
+/* Ícono de ubicación: centrado y escalable responsivo */
+.icono {
+    text-align: center;
+    /* centra el contenido en línea, útil si la imagen es inline-block */
+}
+
+.icono img {
+    padding: 1rem 0;
+    max-width: 50px;
+    width: 100%;
+    height: auto;
+}
+
+.corona {
+    text-align: center;
+    /* centra el contenido en línea, útil si la imagen es inline-block */
+}
+
+.corona img {
+    padding: 1rem 0;
+    max-width: 120px;
+    width: 100%;
+    height: auto;
+}
+
+/* Accessibility helper: visually hide element but keep it for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.glassmorphism {
+    padding: 1.6rem 1.8rem;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Panel de vestimenta: paleta + aviso de cristal ===== */
+/* Aseguramos que la sección 6 se comporte como una sola columna de ancho completo */
+#seccion-6{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.vestimenta-panel{
+      width: 100%;
+  max-width: 100%;
+  flex: 1 1 100%;      /* evita que se encoja si el padre es flex/grid */
+  align-self: stretch;  /* evita que se encoja si el padre es flex/grid */
+  position:relative;
+  padding:3rem 1.5rem;
+  border-radius:1.6rem;
+  background:
+    radial-gradient(circle at 25% 15%, rgba(255,255,255,.06), transparent 60%),
+    radial-gradient(circle at 75% 85%, #33456e 0%, #1c2740 55%, #10162a 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2.2rem;
+  overflow:hidden;
+}
+
+/* fila de círculos de color */
+.paleta-circulos{
+  display:flex;
+  gap:1.1rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.circulo{
+  width:3.4rem;
+  height:3.4rem;
+  border-radius:50%;
+  background:var(--color);
+  border:2px solid rgba(255,255,255,.45);
+  box-shadow:0 3px 10px rgba(0,0,0,.4);
+  transition:transform .25s ease, box-shadow .25s ease;
+  cursor:pointer;
+}
+.circulo:hover{ transform:translateY(-3px); }
+
+.circulo.reservado{
+  border:3px solid transparent;
+  background:
+    linear-gradient(var(--color), var(--color)) padding-box,
+    linear-gradient(135deg, var(--oro2), var(--oro1) 60%, var(--oro3)) border-box;
+  transform:scale(1.18);
+  box-shadow:0 4px 14px rgba(0,0,0,.45), 0 0 0 3px rgba(191,149,63,.25);
+}
+
+/* tarjeta de cristal (glassmorphism) */
+.aviso-cristal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+
+    padding: 1.6rem 1.8rem;
+    border-radius: 1.2rem;
+
+    background: rgba(255,255,255,.10);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,.22);
+    box-shadow: 0 10px 26px rgba(0,0,0,.3);
+}
+
+.aviso-cristal__ceremonia {
+    width: calc(100% - 3rem);
+    margin: 0 auto 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+
+    padding: 1.6rem 1.8rem;
+
+    border-radius: 1.2rem;
+    background: rgba(255,255,255,.10);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,.22);
+    box-shadow: 0 10px 26px rgba(0,0,0,.3);
+}
+
+.aviso-cristal__icono {
+    flex-shrink: 0;
+
+    width: 2.2rem;
+    height: 2.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.4rem;
+    color: #1c2740;
+
+    background: linear-gradient(135deg, var(--oro2), var(--oro1));
+    border-radius: 50%;
+}
+
+.aviso-cristal p {
+    margin: 0;
+
+    color: var(--blanco);
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.55rem;
+    line-height: 1.35;
+
+    text-align: center;
+}
+.aviso-cristal strong{
+  color:var(--oro2);
+}
+
+.wrap{ max-width:40rem; width:100%; }
+.wrap h3{
+  font-family:'Corinthia',cursive;
+  font-size:4.5rem;
+  color:var(--primario);
+  text-align:center;
+  margin:0 0 .3rem;
+}
+.wrap h4{
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  font-size:2rem;
+  color:var(--primario);
+  text-align:center;
+  margin:0 0 2rem;
+}
+
+@media (min-width: 768px) {
+
+    #seccion-6 .wrap {
+        width: 100%;
+        max-width: none;
+    }
+
+}
+
+/*Reloj*/
+.seccion-reloj {
+    position: relative;
+border-radius: 1rem;
+    width: 100%;
+    min-height: 75vh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: var(--primario);
+}
+
+.titulo-contador {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+}
+.titulo-contador h4{
+  position:relative;
+  z-index:1;
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  font-size:1.7rem;
+  color:var(--oro2);
+  letter-spacing:.5px;
+  margin:0 ;
+  text-shadow:0 2px 8px rgba(0,0,0,.5);
+}
+
+#countdown {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 12px;
+    flex-wrap: nowrap;
+
+    width: 100%;
+}
+
+.countdown-item{
+  position:relative;
+  flex:1;
+  min-width:6.5rem;
+  max-width:120px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:1.6rem 1rem 1.2rem;
+  box-sizing:border-box;
+
+  background:rgba(20,30,50,.45);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(191,149,63,.6);
+  border-radius:1.6rem;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,.3),
+    0 12px 24px rgba(0,0,0,.4),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.countdown-item::before{
+  content:"";
+  position:absolute;
+  top:-1.4rem;
+  left:50%;
+  transform:translateX(-50%);
+  width:70%;
+  height:2rem;
+  background:radial-gradient(ellipse at center, rgba(252,246,186,.35) 0%, transparent 70%);
+  filter:blur(2px);
+  pointer-events:none;
+}
+
+.countdown-number{
+  position:relative;
+  font-family:'Cinzel', serif;
+  font-size:clamp(1.5rem, 4vw, 2.5rem);
+  font-weight:bold;
+  line-height:1;
+  letter-spacing:.3rem;
+  padding-bottom:.6rem;
+  background:linear-gradient(180deg, var(--oro2) 0%, var(--oro1) 55%, var(--oro3) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+
+
+.countdown-item-label{
+  font-family:'Cinzel', serif;
+  font-weight:bold;
+  font-size:clamp(0.65rem, 2vw, 1rem);
+  letter-spacing:.2rem;
+  text-transform:uppercase;
+  color:rgba(252,246,186,.85);
+}
+.reloj-overlay {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2rem 1rem 2.5rem;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(14,23,41,0),
+        rgba(14,23,41,.45) 20%,
+        rgba(14,23,41,.90) 100%
+    );
+}
+@media (min-width:768px){
+  .seccion-reloj{ min-height:75vh; padding-bottom:4rem; }
+}
+
+.seccion-fecha{
+  position:relative;
+  min-height:65vh;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:2rem 1.5rem 3rem;
+  text-align:center;
+border-radius:1rem;
+  background-image:
+    linear-gradient(to bottom,
+      rgba(14,23,41,0) 35%,
+      rgba(14,23,41,.55) 65%,
+      rgba(14,23,41,.92) 100%),
+    url("../img/fecha.webp");
+  background-size:cover;
+  background-position:center;
+}
+
+/* La tarjeta de cristal, igual que .countdown-item */
+.tarjeta-fecha {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 auto;
+    max-width: 26rem;
+    width: 100%;
+
+    padding: 1.6rem 1.8rem;
+    box-sizing: border-box;
+
+    background: rgba(20, 30, 50, .45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(191, 149, 63, .6);
+    border-radius: 1.6rem;
+
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, .3),
+        0 12px 24px rgba(0, 0, 0, .4),
+        inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+/* El texto dentro, solo tipografía — sin fondo propio */
+.tarjeta-fecha h4 {
+    position: relative;
+    margin: 0;
+
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    letter-spacing: .5px;
+    color: var(--oro2);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+}
+.desliza{
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: -1rem; /* compensa el padding-top de .sombra */
+
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    padding: 4rem;
+
+    box-sizing: border-box;
+}
+
+.desliza__texto{
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
+    color: var(--oro2);
+    text-shadow: 0 2px 6px rgba(0,0,0,.5);
+}
+
+.desliza__flecha{
+    width: 1.4rem;
+    height: 1.4rem;
+    border-right: 2px solid var(--oro1);
+    border-bottom: 2px solid var(--oro1);
+    transform: rotate(45deg);
+    animation: desliza-rebote 1.8s ease-in-out infinite;
+}
+
+@keyframes desliza-rebote{
+    0%, 100%{ transform: rotate(45deg) translate(0,0); opacity: .6; }
+    50%{ transform: rotate(45deg) translate(6px,6px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .desliza__flecha{ animation: none; }
+}
+
+/* ===== Carrusel de fotos ===== */
+
+.seccion-reloj .carrusel-rasgado {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    aspect-ratio: auto;
+    margin: 0;
+    z-index: 0;
+}
+
+.carrusel-rasgado__slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transform:scale(.96);
+  transition:opacity .6s ease, transform .6s ease;
+  pointer-events:none;
+}
+
+.carrusel-rasgado__slide.activo{
+  opacity:1;
+  transform:scale(1);
+  pointer-events:auto;
+  z-index:2;
+}
+
+.carrusel-rasgado__slide img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.2rem;
+    box-shadow: 0 10px 22px rgba(0,0,0,.3);
+}
+
+/* sello dorado decorativo, opcional */
+.carrusel-rasgado__sello{
+  position:absolute;
+  top:-0.01rem;
+  right:-0.01rem;
+  width:4.5rem;
+  height:4.5rem;
+  border-radius:50%;
+  background: radial-gradient(circle at 35% 30%, var(--oro2), var(--oro1) 55%, var(--oro3) 100%);
+  box-shadow:0 6px 14px rgba(0,0,0,.25);
+  z-index:3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  color:var(--blanco);
+  font-size:1.2rem;
+  text-shadow:0 1px 3px rgba(0,0,0,.35);
+}
+
+/* controles */
+.carrusel-rasgado__dots{
+  display:flex;
+  justify-content:center;
+  gap:.6rem;
+  margin-top:1.5rem;
+}
+.carrusel-rasgado__dot{
+  width:.9rem;
+  height:.9rem;
+  border-radius:50%;
+  border:2px solid var(--primario);
+  background:transparent;
+  cursor:pointer;
+  padding:0;
+}
+.carrusel-rasgado__dot.activo{
+  background:var(--primario);
+}
+
+.carrusel-rasgado__flecha{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:4;
+  background:var(--blanco);
+  border:none;
+  width:2.6rem;
+  height:2.6rem;
+  border-radius:50%;
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+  color:var(--primario);
+  font-size:1.3rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.carrusel-rasgado__flecha--izq{ left:-1rem; }
+.carrusel-rasgado__flecha--der{ right:-1rem; }
+@media (min-width: 768px){
+  .seccion-reloj{
+    min-height: auto;                 /* ya no fuerza 75vh */
+    aspect-ratio: 4 / 3;              /* ajusta esto a la proporción real de tus fotos */
+  }
+
+  .carrusel-rasgado__slide img{
+    object-fit: contain;              /* muestra la foto completa, sin recortar */
+    background: #0d1729;              /* rellena el espacio sobrante con el mismo tono oscuro del degradado, para que no se vean franjas blancas */
+  }
+}
+
+.rsvp{
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 1.6rem 3.5rem;
+    border-radius: 1.8rem;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 20% 15%, rgba(191,149,63,.20) 0%, transparent 7%),
+        radial-gradient(circle at 82% 20%, rgba(252,246,186,.15) 0%, transparent 6%),
+        radial-gradient(circle at 65% 80%, rgba(191,149,63,.18) 0%, transparent 7%),
+        radial-gradient(circle at 20% 85%, rgba(179,135,40,.18) 0%, transparent 6%),
+        linear-gradient(160deg, #1a2740 0%, #101c33 55%, #0a1424 100%);
+}
+
+.rsvp__etiqueta{
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: .4rem;
+    text-transform: uppercase;
+    color: var(--oro2);
+    opacity: .85;
+}
+
+.rsvp__titulo{
+    margin: .4rem 0 .8rem;
+    font-family: 'Corinthia', cursive;
+    font-weight: 700;
+    font-size: 6rem;
+    line-height: 1;
+    background: linear-gradient(180deg, var(--oro2) 0%, var(--oro1) 55%, var(--oro3) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rsvp__corazon{
+    font-size: 1.3rem;
+    color: var(--oro1);
+    text-shadow: 0 0 10px rgba(191,149,63,.6);
+    margin-bottom: 2.2rem;
+}
+
+.rsvp__tarjeta{
+    padding: 2.2rem 1.6rem 2rem;
+    border-radius: 1.4rem;
+    background: rgba(255,255,255,.06);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(191,149,63,.35);
+    box-shadow: 0 10px 26px rgba(0,0,0,.35);
+}
+
+.rsvp__texto{
+    margin: 0 0 1.6rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.55rem;
+    line-height: 1.35;
+    text-align: center;
+    line-height: 1.6;
+    color: rgba(255,255,255,.9);
+}
+
+.rsvp__divisor{
+    display: block;
+    width: 2.4rem;
+    height: 2px;
+    margin: 0 auto 1.8rem;
+    border-radius: 2px;
+}
+
+.rsvp__boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 3rem;
+    text-decoration: none;
+    cursor: pointer;
+font-family: 'Poiret One', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #1c1c1c;
+
+    background: linear-gradient(135deg, var(--oro2) 0%, var(--oro1) 60%, var(--oro3) 100%);
+    box-shadow: 0 8px 20px rgba(191,149,63,.4);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.rsvp__boton:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(191,149,63,.5);
+}
+
+.rsvp__boton-icono{
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
+}
+.contenedor-tarjetas {
+    width: 100%;
+    max-width: none;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 1.4rem;
+
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+
+    .contenedor-tarjetas {
+        width: 100%;
+        max-width: none;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 1.4rem;
+    }
+
+    .tarjeta-familia {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* ===== Tarjeta base, compartida por las tres ===== */
+.tarjeta-familia{
+  position:relative;
+  overflow:hidden;
+  padding:2.6rem 1.8rem 2.2rem;
+  border-radius:1.4rem;
+  text-align:center;
+
+  background: linear-gradient(160deg, #1c2b4a 0%, #14203a 60%, #0d1626 100%);
+  border:1px solid rgba(191,149,63,.4);
+  box-shadow:0 10px 24px rgba(0,0,0,.3);
+}
+
+.tarjeta-familia__ornamento{
+  font-size:1.3rem;
+  margin-bottom:.6rem;
+  color:var(--acento, var(--oro1));
+  text-shadow:0 0 10px rgba(191,149,63,.4);
+}
+
+.tarjeta-familia p{
+  margin:0 0 .3rem;
+  font-family:'Cinzel', serif;
+  font-weight:600;
+  font-size: 1.1rem;
+  letter-spacing:.15rem;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.65);
+}
+
+.tarjeta-familia h3{
+  margin:0 0 1.4rem;
+  font-family:'Corinthia', cursive;
+  font-weight:700;
+  font-size:4rem;
+  line-height:1;
+  color:var(--acento, var(--oro1));
+}
+
+.tarjeta-familia__linea{
+  display:block;
+  width:2.2rem;
+  height:1px;
+  margin:0 auto 1.2rem;
+  background:linear-gradient(90deg, transparent, var(--acento, var(--oro1)), transparent);
+}
+
+.tarjeta-familia h4{
+  margin:0;
+  font-family:'Cinzel', serif;
+  font-weight:700;
+  font-size:2rem;
+  letter-spacing:.03rem;
+  color:var(--blanco);
+  line-height:1.5;
+}
+
+.tarjeta-familia h4.y{
+  margin:.3rem 0;
+  font-family:'Corinthia', cursive;
+  font-size:1.6rem;
+  color:var(--acento, var(--oro1));
+  opacity:.85;
+}
+
+/* ===== Variantes: cada rol con su propio acento y ornamento ===== */
+.tarjeta-familia--padres{
+  --acento:#BF953F; /* dorado clásico */
+}
+.tarjeta-familia--velacion{
+  --acento:#c9a66b; /* rosa dorado */
+}
+.tarjeta-familia--brindis{
+  --acento:#d9c08b; /* champagne */
+}
