@@ -876,10 +876,10 @@ border-radius:1rem;
     z-index: 1;
 
     margin: 0 auto;
-    max-width: 26rem;
+    max-width: 40rem;
     width: 100%;
 
-    padding: 1.6rem 1.8rem;
+    padding: 1.6rem 1rem;
     box-sizing: border-box;
 
     background: rgba(20, 30, 50, .45);
@@ -902,7 +902,7 @@ border-radius:1rem;
 
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    font-size: 1.7rem;
+    font-size: 2.7rem;
     letter-spacing: .5px;
     color: var(--oro2);
     text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
@@ -1270,4 +1270,88 @@ font-family: 'Poiret One', sans-serif;
 }
 .tarjeta-familia--brindis{
   --acento:#d9c08b; /* champagne */
+}
+/* fila de círculos de color */
+.paleta-circulos{
+  display:flex;
+  gap:1.1rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.circulo{
+  width:3.4rem;
+  height:3.4rem;
+  border-radius:50%;
+  background:var(--color);
+  border:2px solid rgba(255,255,255,.45);
+  box-shadow:0 3px 10px rgba(0,0,0,.4);
+  transition:transform .25s ease, box-shadow .25s ease;
+  cursor:pointer;
+}
+.circulo:hover{ transform:translateY(-3px); }
+
+.circulo.reservado{
+  border:3px solid transparent;
+  background:
+    linear-gradient(var(--color), var(--color)) padding-box,
+    linear-gradient(135deg, var(--oro2), var(--oro1) 60%, var(--oro3)) border-box;
+  transform:scale(1.18);
+  box-shadow:0 4px 14px rgba(0,0,0,.45), 0 0 0 3px rgba(191,149,63,.25);
+}
+
+/* ===== Botón flotante de música ===== */
+.musica-flotante{
+  position:fixed;
+  bottom:1.5rem;
+  right:1.5rem;
+  z-index:999;
+
+  width:3.6rem;
+  height:3.6rem;
+  border-radius:50%;
+  border:1.5px solid rgba(191,149,63,.7);
+  background:radial-gradient(circle at 35% 30%, #22355a, #0e1729 80%);
+  box-shadow:0 6px 18px rgba(0,0,0,.5), 0 0 14px rgba(191,149,63,.25);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  padding:0;
+}
+
+.musica-flotante__icono{
+  font-size:1.4rem;
+  color:var(--oro1);
+  background:linear-gradient(180deg, var(--oro2), var(--oro1) 60%, var(--oro3));
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  line-height:1;
+}
+
+/* gira solo mientras está sonando */
+.musica-flotante.girando{
+  animation: girar-disco 4s linear infinite;
+}
+
+@keyframes girar-disco{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .musica-flotante.girando{ animation:none; }
+}
+@media (max-width: 480px) {
+    .musica-flotante {
+        width: 3.2rem;
+        height: 3.2rem;
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .musica-flotante__icono {
+        font-size: 1.2rem;
+    }
 }

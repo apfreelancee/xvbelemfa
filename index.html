@@ -77,9 +77,9 @@
                         <p>Con la bendición de Dios y de mis</p>
                         <h3>Padres</h3>
                         <span class="tarjeta-familia__linea"></span>
-                        <h4>Mtro. Manuel De la Fuente Estrada</h4>
+                        <h4>Profr. Manuel De la Fuente Estrada</h4>
                         <h4 class="y">&amp;</h4>
-                        <h4>Mtra. Leidy Alejandro Hernández</h4>
+                        <h4>Profra. Leidy Alejandro Hernández</h4>
                     </div>
 
                     <div class="tarjeta-familia tarjeta-familia--velacion animar slide-right">
@@ -116,8 +116,9 @@
             <section class="seccion fondo-blanco texto-negro " id="seccion-2">
                 <div class="fecha fondo-azul texto-blanco">
                     <span class="fecha__linea"></span>
-                    <p>Crecer significa aprender, madurar y soñar más alto,
-                        y me llena de alegría que seas parte de ello.</p>
+                    <p>Hoy quiero dar gracias a Dios por darme la vida y por permitirme llegar a este día
+                        tan especial. Con el corazón lleno de alegría, quiero compartir este momento con quienes más
+                        quiero.</p>
                     <span class="fecha__linea--abajo"></span>
                 </div>
             </section>
@@ -194,8 +195,8 @@
                     </div>
                     <div class="rsvp__tarjeta">
                         <p>Muchas gracias por el cariño que me has dado hasta el día de hoy. Su compañia hace de este
-                            momento
-                            aún más especial para mí.
+                            momento aún más especial para mí. Si tu cariño te motiva a obsequiarme un regalo, un sobre
+                            con efectivo será muy bien recibido.
                         </p>
                     </div>
                 </div>
@@ -215,6 +216,13 @@
                     <h4>Formal</h4>
 
                     <div class="vestimenta-panel">
+                        <div class="paleta-circulos">
+                            <span class="circulo" style="--color:#0d1b3d"></span>
+                            <span class="circulo" style="--color:#1c2f5c"></span>
+                            <span class="circulo reservado" style="--color:#2b3b5d"></span>
+                            <span class="circulo" style="--color:#4a6ba0"></span>
+                            <span class="circulo" style="--color:#8fa8d1"></span>
+                        </div>
                         <div class="aviso-cristal">
                             <div class="aviso-cristal__icono">&#9888;</div>
                             <p>El tono <strong>azul y sus variaciones</strong> está estrictamente reservado para la
@@ -231,9 +239,10 @@
                 <div class="rsvp__corazon">&#9825;</div>
 
                 <div class="rsvp__tarjeta">
-                    <p class="rsvp__texto">Será un honor contar con tu presencia. Por favor, ayúdanos confirmando tu
-                        asistencia
-                        antes del 24 de Agosto.
+                    <p class="rsvp__texto">Será un honor contar con tu presencia. Al dar click en el botón escríbe tu
+                        nombre completo, mi familia y yo te indicaremos el número
+                        de lugares que hemos reservado para ti. Por favor, ayúdanos confirmando tu
+                        asistencia antes del 24 de Agosto.
                     </p>
                     <span class="rsvp__divisor"></span>
                     <a href="https://wa.me/529331366984?text=Hola%2C%20quiero%20confirmar%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Belem."
@@ -320,12 +329,22 @@
 
         </div>
     </main>
+    <!-- Botón de música -->
+    <button id="btn-musica" class="musica-flotante" aria-label="Reproducir o pausar música" aria-pressed="false">
+        <span class="musica-flotante__icono">&#9835;</span>
+    </button>
+
+    <!-- Música de fondo -->
+    <audio id="musica" loop preload="auto">
+        <source src="audio/cuan-grande-es-el.mp3" type="audio/mpeg">
+    </audio>
     <footer class="footer">
         <p></p>
     </footer>
     <script src="js/countdown.js"></script>
     <script src="js/animaciones.js"></script>
     <script src="js/carrusel.js"></script>
+    <script src="js/audio.js"></script>
 </body>
 
 </html>
