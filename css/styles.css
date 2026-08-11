@@ -1373,3 +1373,107 @@ font-family: 'Poiret One', sans-serif;
 @media (prefers-reduced-motion: reduce){
   .musica-flotante.girando{ animation:none; }
 }
+
+/* ===== Sección hashtag del evento ===== */
+.hashtag-evento{
+  position:relative;
+  overflow:hidden;
+  padding:3rem 1.8rem 2.8rem;
+  border-radius:1.6rem;
+  text-align:center;
+
+  background:
+    radial-gradient(circle at 18% 18%, rgba(191,149,63,.18) 0%, transparent 7%),
+    radial-gradient(circle at 85% 15%, rgba(252,246,186,.14) 0%, transparent 6%),
+    radial-gradient(circle at 70% 80%, rgba(191,149,63,.16) 0%, transparent 7%),
+    radial-gradient(circle at 20% 85%, rgba(179,135,40,.16) 0%, transparent 6%),
+    linear-gradient(160deg, #1a2740 0%, #101c33 55%, #0a1424 100%);
+}
+
+.hashtag-evento__icono{
+  width:3.4rem;
+  height:3.4rem;
+  margin:0 auto 1.2rem;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle at 35% 30%, var(--oro2), var(--oro1) 60%, var(--oro3) 100%);
+  box-shadow:0 6px 14px rgba(0,0,0,.35);
+}
+
+.hashtag-evento__icono svg{
+  width:1.5rem;
+  height:1.5rem;
+  fill:none;
+  stroke:#1c1c1c;
+  stroke-width:1.8;
+}
+
+.hashtag-evento__etiqueta{
+  margin:0 0 1.1rem;
+  font-family:'Cinzel', serif;
+  font-weight:600;
+  font-size:2rem;
+  letter-spacing:.35rem;
+  text-transform:uppercase;
+  color:var(--oro2);
+  opacity:.85;
+}
+
+.hashtag-evento__pill{
+  display:inline-block;
+  margin:0 auto 1.3rem;
+  padding:1rem 2rem;
+  border-radius:3rem;
+  border:1px solid rgba(191,149,63,.55);
+  background:rgba(255,255,255,.05);
+
+  font-family:'Cinzel', serif;
+  font-weight:700;
+  font-size:2rem;
+  letter-spacing:.08rem;
+
+  background-image:linear-gradient(180deg, var(--oro2) 0%, var(--oro1) 55%, var(--oro3) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hashtag-evento__texto{
+    margin: 0 0 1.6rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.55rem;
+    line-height: 1.35;
+    text-align: center;
+    line-height: 1.6;
+    color: rgba(255,255,255,.9);
+}
+
+.hashtag-evento__redes{
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+}
+
+.hashtag-evento__red{
+  width:3rem;
+  height:3rem;
+  border-radius:50%;
+  border:1px solid rgba(191,149,63,.5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--oro1);
+  font-family:'Cinzel', serif;
+  font-weight:700;
+  font-size:2rem;
+}
+
+.hashtag-evento__red svg{
+  width:2rem;
+  height:2rem;
+  fill:none;
+  stroke:var(--oro1);
+  stroke-width:1.6;
+}
