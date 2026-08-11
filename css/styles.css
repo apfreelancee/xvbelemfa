@@ -1127,6 +1127,9 @@ border-radius:1rem;
     line-height: 1.6;
     color: rgba(255,255,255,.9);
 }
+.rsvp__texto strong{
+color:var(--oro2);
+}
 
 .rsvp__divisor{
     display: block;
